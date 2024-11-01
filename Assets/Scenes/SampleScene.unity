@@ -209,6 +209,51 @@ MonoBehaviour:
   startValue: 100
   passiveValue: 0
   uiBar: {fileID: 694986646}
+--- !u!1 &590977326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 590977327}
+  - component: {fileID: 590977328}
+  m_Layer: 0
+  m_Name: ManaItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &590977327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590977326}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08893874, y: 0.06394178, z: -3.0837393}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590977328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590977326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc6ba819853a6c41a55d39f6bd77612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 10
 --- !u!1 &632586405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1123,7 @@ GameObject:
   - component: {fileID: 1287494995}
   - component: {fileID: 1287494994}
   - component: {fileID: 1287494997}
+  - component: {fileID: 1287494998}
   m_Layer: 0
   m_Name: FlameArea
   m_TagString: Untagged
@@ -1105,7 +1151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aceba4e451698cc4cb739814dffa252a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1144,7 +1190,7 @@ Transform:
   m_GameObject: {fileID: 1287494992}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.22, y: 0.57349914, z: 0.23327231}
+  m_LocalPosition: {x: -13.22, y: -0.41, z: 0.23327231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1171,6 +1217,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1287494998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287494992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3219deaf59acff4c888323e33d8e6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  delayTime: 1
 --- !u!1 &1341631285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1552,7 @@ Transform:
   m_GameObject: {fileID: 2063279234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1656,6 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05315f7aa6039249aa471c3b352f3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Condition: {fileID: 0}
 --- !u!136 &2063279240
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1692,7 +1753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movesSpeed: 10
-  jumpPower: 0
+  jumpPower: 80
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1720,3 +1781,4 @@ SceneRoots:
   - {fileID: 1925042790}
   - {fileID: 943426659}
   - {fileID: 1287494996}
+  - {fileID: 590977327}

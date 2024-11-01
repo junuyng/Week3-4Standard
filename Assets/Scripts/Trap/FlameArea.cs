@@ -1,18 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FlameArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float damage;
+    [SerializeField] private float delayTime;
+
+    private List<IDamagable> objects = new List<IDamagable>();
+
+    private void OnEnable()
     {
-        
+        StartCoroutine(DealDamage());
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private IEnumerator DealDamage()
     {
-        
+        while (gameObject.activeSelf)
+        {
+            foreach (var obj in objects)
+            {
+                obj.TakeDamge(damage);
+            }
+            
+            yield return new WaitForSeconds(delayTime);
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IDamagable damagable))
+        {
+            objects.Add(damagable);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out IDamagable damagable))
+        {
+            objects.Remove(damagable);
+        }
     }
 }

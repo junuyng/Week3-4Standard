@@ -77,8 +77,13 @@ public class PlayerMovement : MonoBehaviour
         
         for (int i = 0; i < rays.Length; i++)
         {
-            if(Physics.Raycast(rays[i],0.1f,groundLayerMask))
-                  return true;
+            if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
+            {
+                Debug.Log("땅임");
+                return true;
+            }
+
+            
         }
 
         return false;

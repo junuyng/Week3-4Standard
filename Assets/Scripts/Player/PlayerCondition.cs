@@ -2,14 +2,22 @@
     using System.Collections;
     using UnityEngine;
 
-    public class PlayerCondition : MonoBehaviour
+    public class PlayerCondition : MonoBehaviour, IDamagable
     {
-        [SerializeField]private Condition Health;
-        [SerializeField] private Condition Mana;
+        public Condition Health;
+        public Condition Mana;
         
         private void Update()
         {
             Mana.AddValue(Mana.GetPassiveValue()* Time.deltaTime);
-        }    
+        }
+
+        public void TakeDamge(float damage)
+        {
+             Health.SubValue(damage);
+        }
         
+     
+
+         
     }
